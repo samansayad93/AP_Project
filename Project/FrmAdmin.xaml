@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="Admin" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <DockPanel LastChildFill="False">
+            <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="20">
+                <MenuItem x:Name="M00" Header="Register User"/>
+                <MenuItem x:Name="M10" Header="Add Post"/>
+                <MenuItem x:Name="M20" Header="Report"/>
+                <MenuItem x:Name="M30" Header="Information"/>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>
