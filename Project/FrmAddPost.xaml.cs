@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace Project
 {
     /// <summary>
-    /// Interaction logic for FrmAdmin.xaml
+    /// Interaction logic for FrmAddPost.xaml
     /// </summary>
-    public partial class FrmAdmin : Window
+    public partial class FrmAddPost : Window
     {
-        public FrmAdmin()
+        public FrmAddPost()
         {
             InitializeComponent();
-        }
-
-        private void M00_Click(object sender, RoutedEventArgs e)
-        {
-            FrmSignUser frmSignUser = new FrmSignUser();
-            frmSignUser.ShowDialog();
-        }
-
-        private void M10_Click(object sender, RoutedEventArgs e)
-        {
-            FrmSearch frmSearch = new FrmSearch();
-            frmSearch.ShowDialog();
         }
     }
 }

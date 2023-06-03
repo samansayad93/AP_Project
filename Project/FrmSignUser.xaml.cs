@@ -50,15 +50,16 @@ namespace Project
 
         public int Func(string username,string password)
         {
-            while (Validation.IsThisUserValid(username))
+            while (Validation.IsThisUserValid(username) == false)
             {
                 username = GenerateUser();
             }
-            while (Validation.IsThisUserPassValid(password))
+            while (Validation.IsThisUserPassValid(password) == false)
             {
                 password = GeneratePass();
             }
             SqlCommand cmd = new SqlCommand("AddUser", con);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@name", TxtName.Text.Trim());
             cmd.Parameters.AddWithValue("@lastname", TxtLastName.Text.Trim());
             cmd.Parameters.AddWithValue("@ssn", TxtSSN.Text.Trim());
@@ -77,7 +78,7 @@ namespace Project
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(Validation.IsThisNameValid(TxtName.Text.Trim()))
+            if(Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
             {
                 MessageBox.Show("Name is Invalid");
                 return;
@@ -87,17 +88,17 @@ namespace Project
                 MessageBox.Show("LastName is Invalid");
                 return;
             }
-            if(Validation.IsThisSSNValid(TxtSSN.Text.Trim()))
+            if(Validation.IsThisSSNValid(TxtSSN.Text.Trim()) == false)
             {
                 MessageBox.Show("SSN is Invalid");
                 return;
             }
-            if (Validation.IsThisPhoneNumberValid(TxtMobile.Text.Trim()))
+            if (Validation.IsThisPhoneNumberValid(TxtMobile.Text.Trim()) == false)
             {
                 MessageBox.Show("Phone Number is Invalid");
                 return;
             }
-            if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()))
+            if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()) == false)
             {
                 MessageBox.Show("Email is Invalid");
                 return;
