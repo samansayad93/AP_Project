@@ -46,7 +46,7 @@ namespace Project
         }
         public static bool IsThisUserValid(this string a)
         {
-            Regex regex = new Regex("^user[0-9]{4}");
+            Regex regex = new Regex("^user[0-9]{1,4}");
             if (!regex.IsMatch(a))
                 return false;
             return true;

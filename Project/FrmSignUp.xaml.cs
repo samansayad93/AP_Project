@@ -79,7 +79,7 @@ namespace Project
             int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
             if(res == 1)
             {
-                MessageBox.Show("User Exists");
+                MessageBox.Show("Admin Exists");
             }
             else if(res == 0)
             {
