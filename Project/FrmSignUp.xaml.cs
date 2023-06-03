@@ -28,7 +28,7 @@ namespace Project
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if(Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
             {

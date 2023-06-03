@@ -23,5 +23,11 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void M00_Click(object sender, RoutedEventArgs e)
+        {
+            FrmSignUser frmSignUser = new FrmSignUser();
+            frmSignUser.ShowDialog();
+        }
     }
 }
