@@ -30,31 +30,44 @@ namespace Project
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if(Validation.IsThisSSNValid(TxtSearch.Text.Trim()) == false)
+            try
             {
-                MessageBox.Show("SSN is Invalid");
-                return;
+                //if(Validation.IsThisSSNValid(TxtSearch.Text.Trim()) == false)
+                //{
+                //    MessageBox.Show("SSN is Invalid");
+                //    return;
+                //}
+                SqlCommand cmd = new SqlCommand("SearchUser", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ssn", TxtSearch.Text.Trim());
+                cmd.Parameters.Add("@result", SqlDbType.Int);
+                cmd.Parameters["@result"].Direction = ParameterDirection.Output;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
+                if (res == 1)
+                {
+                    //FrmAddPost frmAddPost = new FrmAddPost();
+                    //this.Close();
+                    //frmAddPost.ShowDialog();
+                    FrmAddPost frmAddPost = new FrmAddPost();
+                    this.Close();
+                    frmAddPost.ShowDialog();
+                }
+                else if (res == 2)
+                {
+                    //FrmSignUser frmSignUser = new FrmSignUser();
+                    //this.Close();
+                    //frmSignUser.ShowDialog();
+                    FrmAddPost frmAddPost = new FrmAddPost();
+                    this.Close();
+                    frmAddPost.ShowDialog();
+                }
             }
-            SqlCommand cmd = new SqlCommand("SearchUser",con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ssn",TxtSearch.Text.Trim());
-            cmd.Parameters.Add("@result",SqlDbType.Int);
-            cmd.Parameters["@result"].Direction = ParameterDirection.Output;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
-            if(res == 1)
+            catch (Exception ex)
             {
-                FrmAddPost frmAddPost = new FrmAddPost();
-                this.Close();
-                frmAddPost.ShowDialog();
-            }
-            else if(res == 2)
-            {
-                FrmSignUser frmSignUser = new FrmSignUser();
-                this.Close();
-                frmSignUser.ShowDialog();
+                MessageBox.Show(ex.ToString());
             }
         }
     }

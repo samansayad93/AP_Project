@@ -30,62 +30,69 @@ namespace Project
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
+            try
             {
-                MessageBox.Show("Name is Invalid");
-                return;
-            }
-            if (Validation.IsThisNameValid(TxtLastName.Text.Trim()) == false)
-            {
-                MessageBox.Show("LastName is Invalid");
-                return;
-            }
-            if(Validation.IsThisIDValid(TxtPersonalID.Text.Trim()) == false)
-            {
-                MessageBox.Show("Personal ID is Invalid");
-                return;
-            }
-            if(Validation.IsThisPasswordValid(TxtPassword.Text.Trim())== false)
-            {
-                MessageBox.Show("Password is Invalid");
-                return;
-            }
-            if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()) == false)
-            {
-                MessageBox.Show("Email is Invalid");
-                return;
-            }
-            if (TxtRePassword.Text.Trim() != TxtPassword.Text.Trim())
-            {
-                MessageBox.Show("Not Same Password");
-                TxtPassword.Text = "";
-                TxtRePassword.Text = "";
-                return;
-            }
+                if (Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Name is Invalid");
+                    return;
+                }
+                if (Validation.IsThisNameValid(TxtLastName.Text.Trim()) == false)
+                {
+                    MessageBox.Show("LastName is Invalid");
+                    return;
+                }
+                if (Validation.IsThisIDValid(TxtPersonalID.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Personal ID is Invalid");
+                    return;
+                }
+                if (Validation.IsThisPasswordValid(TxtPassword.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Password is Invalid");
+                    return;
+                }
+                if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Email is Invalid");
+                    return;
+                }
+                if (TxtRePassword.Text.Trim() != TxtPassword.Text.Trim())
+                {
+                    MessageBox.Show("Not Same Password");
+                    TxtPassword.Text = "";
+                    TxtRePassword.Text = "";
+                    return;
+                }
 
-            SqlCommand cmd = new SqlCommand("AddAdmin", con);
-            cmd.CommandType =  CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID",int.Parse(TxtPersonalID.Text));
-            cmd.Parameters.AddWithValue("@name",TxtName.Text.Trim());
-            cmd.Parameters.AddWithValue("@lastname", TxtLastName.Text.Trim());
-            cmd.Parameters.AddWithValue("@username",TxtUsername.Text.Trim());
-            cmd.Parameters.AddWithValue("@password",TxtRePassword.Text.Trim());
-            cmd.Parameters.AddWithValue("@email",TxtEmail.Text.Trim());
-            cmd.Parameters.Add("@result", SqlDbType.Int);
-            cmd.Parameters["@result"].Direction = ParameterDirection.Output;
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
-            if(res == 1)
-            {
-                MessageBox.Show("Admin Exists");
+                SqlCommand cmd = new SqlCommand("AddAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", int.Parse(TxtPersonalID.Text));
+                cmd.Parameters.AddWithValue("@name", TxtName.Text.Trim());
+                cmd.Parameters.AddWithValue("@lastname", TxtLastName.Text.Trim());
+                cmd.Parameters.AddWithValue("@username", TxtUsername.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TxtRePassword.Text.Trim());
+                cmd.Parameters.AddWithValue("@email", TxtEmail.Text.Trim());
+                cmd.Parameters.Add("@result", SqlDbType.Int);
+                cmd.Parameters["@result"].Direction = ParameterDirection.Output;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
+                if (res == 1)
+                {
+                    MessageBox.Show("Admin Exists");
+                }
+                else if (res == 0)
+                {
+                    MessageBox.Show("Admin Added Successfully");
+                }
+                this.Close();
             }
-            else if(res == 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("Admin Added Successfully");
+                MessageBox.Show(ex.ToString());
             }
-            this.Close();
         }
     }
 }

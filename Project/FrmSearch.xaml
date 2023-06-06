@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Search" Height="250" Width="400" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Arial" WindowStartupLocation="CenterScreen">
+        Title="Search" Height="250" Width="400" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Arial" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="152,172,0,0" VerticalAlignment="Top" Height="29" Width="72" Click="BtnSearch_Click"/>
         <Label x:Name="LblSearch" Content="User SSN:" HorizontalAlignment="Left" Margin="77,101,0,0" VerticalAlignment="Top"/>

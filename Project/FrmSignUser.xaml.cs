@@ -78,59 +78,66 @@ namespace Project
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if(Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
+            try
             {
-                MessageBox.Show("Name is Invalid");
-                return;
-            }
-            if (Validation.IsThisNameValid(TxtLastName.Text.Trim()) == false)
-            {
-                MessageBox.Show("LastName is Invalid");
-                return;
-            }
-            if(Validation.IsThisSSNValid(TxtSSN.Text.Trim()) == false)
-            {
-                MessageBox.Show("SSN is Invalid");
-                return;
-            }
-            if (Validation.IsThisPhoneNumberValid(TxtMobile.Text.Trim()) == false)
-            {
-                MessageBox.Show("Phone Number is Invalid");
-                return;
-            }
-            if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()) == false)
-            {
-                MessageBox.Show("Email is Invalid");
-                return;
-            }
-            string username = GenerateUser();
-            string password = GeneratePass();
-            int res = Func(username,password);
-            if(res == 1)
-            {
-                MessageBox.Show("User Exists");
-            }
-            while(res == 2)
-            {
-                username = GenerateUser();
-                password = GeneratePass();
-                res = Func(username,password);
-            }
-            if(res == 3)
-            {
-                SmtpClient smtpClient = new SmtpClient();
-                var mailMessage = new MailMessage
+                if (Validation.IsThisNameValid(TxtName.Text.Trim()) == false)
                 {
-                    From = new MailAddress("samansayad93@gmail.com"),
-                    Subject = "Your Post Box Username and Password",
-                    Body = $"<h1>Hello</h1><h2>Username :{username}</h2><h3>Password :{password}</h3>",
-                    IsBodyHtml = true,
-                };
-                mailMessage.To.Add(new MailAddress(TxtEmail.Text.Trim()));
-                smtpClient.Send(mailMessage);
-                MessageBox.Show("User Added successfully and email send");
+                    MessageBox.Show("Name is Invalid");
+                    return;
+                }
+                if (Validation.IsThisNameValid(TxtLastName.Text.Trim()) == false)
+                {
+                    MessageBox.Show("LastName is Invalid");
+                    return;
+                }
+                if (Validation.IsThisSSNValid(TxtSSN.Text.Trim()) == false)
+                {
+                    MessageBox.Show("SSN is Invalid");
+                    return;
+                }
+                if (Validation.IsThisPhoneNumberValid(TxtMobile.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Phone Number is Invalid");
+                    return;
+                }
+                if (Validation.IsThisEmailValid(TxtEmail.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Email is Invalid");
+                    return;
+                }
+                string username = GenerateUser();
+                string password = GeneratePass();
+                int res = Func(username, password);
+                if (res == 1)
+                {
+                    MessageBox.Show("User Exists");
+                }
+                while (res == 2)
+                {
+                    username = GenerateUser();
+                    password = GeneratePass();
+                    res = Func(username, password);
+                }
+                if (res == 3)
+                {
+                    SmtpClient smtpClient = new SmtpClient();
+                    var mailMessage = new MailMessage
+                    {
+                        From = new MailAddress("samansayad93@gmail.com"),
+                        Subject = "Your Post Box Username and Password",
+                        Body = $"<h1>Hello</h1><h2>Username :{username}</h2><h3>Password :{password}</h3>",
+                        IsBodyHtml = true,
+                    };
+                    mailMessage.To.Add(new MailAddress(TxtEmail.Text.Trim()));
+                    smtpClient.Send(mailMessage);
+                    MessageBox.Show("User Added successfully and email send");
+                }
+                this.Close();
             }
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
