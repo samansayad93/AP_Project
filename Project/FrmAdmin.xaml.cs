@@ -35,5 +35,11 @@ namespace Project
             FrmSearch frmSearch = new FrmSearch();
             frmSearch.ShowDialog();
         }
+
+        private void M30_Click(object sender, RoutedEventArgs e)
+        {
+            FrmInformation frmInformation = new FrmInformation();
+            frmInformation.ShowDialog();
+        }
     }
 }
