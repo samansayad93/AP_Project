@@ -1,0 +1,2 @@
+FRMADDPOST
+return post id

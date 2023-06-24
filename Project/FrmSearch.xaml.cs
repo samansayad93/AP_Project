@@ -37,9 +37,10 @@ namespace Project
                 //    MessageBox.Show("SSN is Invalid");
                 //    return;
                 //}
+                App.Current.Properties["UserSSN"] = TxtSearch.Text.Trim();
                 SqlCommand cmd = new SqlCommand("SearchUser", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ssn", TxtSearch.Text.Trim());
+                cmd.Parameters.AddWithValue("@ssn", App.Current.Properties["UserSSN"]);
                 cmd.Parameters.Add("@result", SqlDbType.Int);
                 cmd.Parameters["@result"].Direction = ParameterDirection.Output;
                 con.Open();
@@ -64,6 +65,7 @@ namespace Project
                     this.Close();
                     frmAddPost.ShowDialog();
                 }
+                this.Close();
             }
             catch (Exception ex)
             {

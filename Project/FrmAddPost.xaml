@@ -28,7 +28,7 @@
         <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="183,303,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="299,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
         <Button x:Name="BtnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="547,368,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="BtnCalculate_Click"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="672,368,0,0" VerticalAlignment="Top" Height="40" Width="86"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="672,368,0,0" VerticalAlignment="Top" Height="40" Width="86" Click="BtnSubmit_Click"/>
         <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="167,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsEnabled="False" Height="25"/>
     </Grid>
 </Window>

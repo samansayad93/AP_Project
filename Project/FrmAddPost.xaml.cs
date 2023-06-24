@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +21,8 @@ namespace Project
     /// </summary>
     public partial class FrmAddPost : Window
     {
+        readonly SqlConnection con = new SqlConnection("server= DESKTOP-C4DNQ9C; Database= DbPost; Integrated security=true");
+
         public FrmAddPost()
         {
             InitializeComponent();
@@ -77,6 +81,43 @@ namespace Project
                 TxtWeigth.IsEnabled = false;
                 BtnCalculate.IsEnabled = false;
                 BtnSubmit.IsEnabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BtnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("AddPost", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@sendSSN", App.Current.Properties["UserSSN"]);
+                cmd.Parameters.AddWithValue("@sendloc", TxtSLocation.Text.Trim());
+                cmd.Parameters.AddWithValue("@receiveloc", TxtRLocation.Text.Trim());
+                cmd.Parameters.AddWithValue("@valuable", ChckValuable.IsChecked);
+                cmd.Parameters.AddWithValue("@type",CmbType.Text.Trim());
+                cmd.Parameters.AddWithValue("@posttype",CmbPostType.Text.Trim());
+                cmd.Parameters.AddWithValue("@weight",Convert.ToDouble(TxtWeigth.Text.Trim()));
+                cmd.Parameters.AddWithValue("@phone",TxtPhone.Text.Trim());
+                cmd.Parameters.AddWithValue("@price",Convert.ToDouble(TxtPrice.Text.Trim()));
+                cmd.Parameters.Add("@result", SqlDbType.Int);
+                cmd.Parameters["@result"].Direction = ParameterDirection.Output;
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
+                if(res == 1)
+                {
+                    MessageBox.Show("Not Enough Money in Wallet");
+                }
+                else if(res == 2)
+                {
+                    MessageBox.Show("Your Post Added successfully\nYour Pst ID: {}");
+                }
+                this.Close();
             }
             catch (Exception ex)
             {
