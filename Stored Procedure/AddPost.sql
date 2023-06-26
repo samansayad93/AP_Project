@@ -15,5 +15,6 @@ set @result = 1
 else
 begin
 insert into TblPost (Sender_SSN,Sender_location,Receiver_location,Type,Valuable,Weight,Post_type,MobileNumber,Price) values (@sendSSN,@sendloc,@receiveloc,@type,@valueable,@weigth,@posttype,@phone,@price)
+update TblUser set Wallet = Wallet-@price where SSN = @sendSSN
 set @result = 2
 end

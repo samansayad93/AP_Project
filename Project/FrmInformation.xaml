@@ -5,40 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="FrmInformation" Height="500" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Information" Height="450" Width="1000" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Post ID:" HorizontalAlignment="Left" Margin="84,30,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="154,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Height="20"/>
-        <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="301,31,0,0" VerticalAlignment="Top" Width="73" Height="24"/>
-        <Label x:Name="LblSLocation" Content="Sender Location:" HorizontalAlignment="Left" Margin="36,79,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="27,153,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtSLocation" HorizontalAlignment="Left" Margin="166,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="52"/>
-        <TextBox x:Name="TxtRLocation" HorizontalAlignment="Left" Margin="166,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="45"/>
+        <Label x:Name="LblPostID" Content="Post ID:" HorizontalAlignment="Left" Margin="84,30,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPostID" HorizontalAlignment="Left" Margin="154,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" Height="20"/>
+        <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="301,31,0,0" VerticalAlignment="Top" Width="73" Height="24" Click="BtnSearch_Click"/>
+        <Label x:Name="LblSLocation" Content="Sender Location:" HorizontalAlignment="Left" Margin="36,83,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="27,158,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtSLocation" HorizontalAlignment="Left" Margin="148,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447" Height="52" IsEnabled="False"/>
+        <TextBox x:Name="TxtRLocation" HorizontalAlignment="Left" Margin="148,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="447" Height="45" IsEnabled="False"/>
         <Label x:Name="LblType" Content="Type:" HorizontalAlignment="Left" Margin="93,216,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="166,218,0,0" VerticalAlignment="Top" Width="150" Height="25">
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="148,218,0,0" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False" IsReadOnly="True">
             <ComboBoxItem Content="Object"/>
             <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Fragile"/>
         </ComboBox>
-        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="358,225,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="735,136,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="82,262,0,0" VerticalAlignment="Top" />
-        <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="166,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" />
-        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="70,305,0,0" VerticalAlignment="Top" />
-        <ComboBox x:Name="CmbPostType" HorizontalAlignment="Left" Margin="166,303,0,0" VerticalAlignment="Top" Width="150" Height="25" >
+        <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="148,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False"/>
+        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="367,222,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="CmbPostType" HorizontalAlignment="Left" Margin="445,220,0,0" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False" IsReadOnly="True">
             <ComboBoxItem Content="Regular"/>
             <ComboBoxItem Content="Forehand"/>
         </ComboBox>
-        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="43,351,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="166,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
-        <Label x:Name="LblStatus" Content="Status:" HorizontalAlignment="Left" Margin="85,396,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CmbStatus" HorizontalAlignment="Left" Margin="166,394,0,0" VerticalAlignment="Top" Width="150" Height="25" >
+        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="339,262,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="445,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False"/>
+        <Label x:Name="LblPrice" Content="Price:" HorizontalAlignment="Left" Margin="92,309,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="148,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False"/>
+        <Label x:Name="LblStatus" Content="Status:" HorizontalAlignment="Left" Margin="386,309,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CmbStatus" HorizontalAlignment="Left" Margin="445,308,0,0" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False">
             <ComboBoxItem Content="Registered"/>
             <ComboBoxItem Content="Ready to Go"/>
             <ComboBoxItem Content="Posted"/>
             <ComboBoxItem Content="Delivered"/>
         </ComboBox>
-        <Label x:Name="LblComment" Content="Comment:" HorizontalAlignment="Left" Margin="358,262,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtComment" HorizontalAlignment="Left" Margin="428,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="347" Height="110"/>
-        <Button x:Name="BtnUpdate" Content="Update" HorizontalAlignment="Left" Margin="565,396,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
+        <Label x:Name="LblSendSSN" Content="Sender SSN:" HorizontalAlignment="Left" Margin="656,85,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtSendSSN" HorizontalAlignment="Left" Margin="753,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25" IsEnabled="False"/>
+        <Label x:Name="LblComment" Content="Comment:" HorizontalAlignment="Left" Margin="745,169,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtComment" HorizontalAlignment="Left" Margin="656,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Height="130" IsEnabled="False"/>
+        <Button x:Name="BtnUpdate" Content="Update" HorizontalAlignment="Left" Margin="304,369,0,0" VerticalAlignment="Top" Height="30" Width="66" IsEnabled="False" Click="BtnUpdate_Click"/>
     </Grid>
 </Window>
