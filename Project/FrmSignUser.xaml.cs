@@ -122,12 +122,12 @@ namespace Project
                 if (res == 3)
                 {
                     SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
-                    smtpClient.Port = 597;
+                    smtpClient.Port = 465;
                     smtpClient.EnableSsl = true;
                     var mailMessage = new MailMessage();
                     mailMessage.From = new MailAddress("samansayad93@gmail.com");
                     mailMessage.Subject = "Your Post Box Username and Password";
-                    mailMessage.Body = $"<html><body><h1>Your username and passsword for sign in</h1></br><h2>Username: {username}</h2><h2>Password: {password}</h2></body></html>";
+                    mailMessage.Body = $"<html><body><h1>Your username and passsword for sign in</h1></br><h2>Username: {username} </h2><h2>Password: {password}</h2></body></html>";
                     mailMessage.IsBodyHtml = true;
                     mailMessage.To.Add(new MailAddress(TxtEmail.Text.Trim()));
                     smtpClient.Send(mailMessage);
