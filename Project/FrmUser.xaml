@@ -10,9 +10,9 @@
         <DockPanel LastChildFill="False">
             <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="20">
                 <MenuItem x:Name="M00" Header="Report"/>
-                <MenuItem x:Name="M10" Header="Information"/>
+                <MenuItem x:Name="M10" Header="Post Information" Click="M10_Click"/>
                 <MenuItem x:Name="M20" Header="Wallet"/>
-                <MenuItem x:Name="M30" Header="Change"/>
+                <MenuItem x:Name="M30" Header="Change Personal Information"/>
             </Menu>
         </DockPanel>
     </Grid>

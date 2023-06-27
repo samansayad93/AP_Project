@@ -23,5 +23,11 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void M10_Click(object sender, RoutedEventArgs e)
+        {
+            FrmInformationUser user = new FrmInformationUser();
+            user.ShowDialog();
+        }
     }
 }

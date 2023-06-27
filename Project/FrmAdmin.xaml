@@ -12,7 +12,7 @@
                 <MenuItem x:Name="M00" Header="Register User" Click="M00_Click"/>
                 <MenuItem x:Name="M10" Header="Add Post" Click="M10_Click"/>
                 <MenuItem x:Name="M20" Header="Report"/>
-                <MenuItem x:Name="M30" Header="Information" Click="M30_Click"/>
+                <MenuItem x:Name="M30" Header="Post Information" Click="M30_Click"/>
             </Menu>
         </DockPanel>
     </Grid>
