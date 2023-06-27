@@ -97,7 +97,7 @@ namespace Project
                 cmd.Parameters.AddWithValue("@sendSSN", App.Current.Properties["UserSSN"]);
                 cmd.Parameters.AddWithValue("@sendloc", TxtSLocation.Text.Trim());
                 cmd.Parameters.AddWithValue("@receiveloc", TxtRLocation.Text.Trim());
-                cmd.Parameters.AddWithValue("@valuable", ChckValuable.IsChecked);
+                cmd.Parameters.AddWithValue("@valueable", Convert.ToBoolean(ChckValuable.IsChecked));
                 cmd.Parameters.AddWithValue("@type",CmbType.Text.Trim());
                 cmd.Parameters.AddWithValue("@posttype",CmbPostType.Text.Trim());
                 cmd.Parameters.AddWithValue("@weight",Convert.ToDouble(TxtWeigth.Text.Trim()));

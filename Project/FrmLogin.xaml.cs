@@ -52,8 +52,8 @@ namespace Project
                 {
                     App.Current.Properties["Type"] = "admin";
                     FrmAdmin frmAdmin = new FrmAdmin();
-                    frmAdmin.ShowDialog();
                     this.Close();
+                    frmAdmin.ShowDialog();
                 }
                 else if (res == 2)
                 {
@@ -65,8 +65,8 @@ namespace Project
                     App.Current.Properties["Type"] = "user";
                     App.Current.Properties["SSN"] = dt.Rows[0][0].ToString();
                     FrmUser frmUser = new FrmUser();
-                    frmUser.ShowDialog();
                     this.Close();
+                    frmUser.ShowDialog();
                 }
                 else if (res == 3)
                 {

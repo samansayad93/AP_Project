@@ -53,7 +53,7 @@ namespace Project
                     CmbType.Text = dt.Rows[0][4].ToString();
                     ChckValuable.IsChecked = Convert.ToBoolean(dt.Rows[0][5].ToString());
                     TxtWeigth.Text = dt.Rows[0][6].ToString();
-                    CmbType.Text = dt.Rows[0][7].ToString();
+                    CmbPostType.Text = dt.Rows[0][7].ToString();
                     TxtPhone.Text = dt.Rows[0][8].ToString();
                     TxtPrice.Text = dt.Rows[0][9].ToString();
                     CmbStatus.Text = dt.Rows[0][10].ToString();
