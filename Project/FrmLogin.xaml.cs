@@ -50,12 +50,20 @@ namespace Project
                 int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
                 if (res == 1)
                 {
+                    App.Current.Properties["Type"] = "admin";
                     FrmAdmin frmAdmin = new FrmAdmin();
                     frmAdmin.ShowDialog();
                     this.Close();
                 }
                 else if (res == 2)
                 {
+                    SqlDataAdapter da = new SqlDataAdapter("FindSSNByUsername",con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@username",TxtUsername.Text.Trim());
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    App.Current.Properties["Type"] = "user";
+                    App.Current.Properties["SSN"] = dt.Rows[0][0].ToString();
                     FrmUser frmUser = new FrmUser();
                     frmUser.ShowDialog();
                     this.Close();

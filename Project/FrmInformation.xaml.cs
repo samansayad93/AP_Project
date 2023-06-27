@@ -48,6 +48,7 @@ namespace Project
                 else if (res == 2)
                 {
                     BtnUpdate.IsEnabled = true;
+                    CmbStatus.IsEnabled = true;
                     TxtSendSSN.Text = dt.Rows[0][1].ToString();
                     TxtSLocation.Text = dt.Rows[0][2].ToString();
                     TxtRLocation.Text = dt.Rows[0][3].ToString();
