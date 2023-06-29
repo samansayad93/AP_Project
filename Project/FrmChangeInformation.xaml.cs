@@ -32,16 +32,16 @@ namespace Project
         {
             try
             {
-                if (Validation.IsThisUserValid(TxtUsername.Text.Trim()) == false)
-                {
-                    MessageBox.Show("Username is Invalid");
-                    return;
-                }
-                if (Validation.IsThisUserPassValid(TxtPassword.Text.Trim()) == false)
-                {
-                    MessageBox.Show("Password is Invalid");
-                    return;
-                }
+                //if (Validation.IsThisUserValid(TxtUsername.Text.Trim()) == false)
+                //{
+                //    MessageBox.Show("Username is Invalid");
+                //    return;
+                //}
+                //if (Validation.IsThisUserPassValid(TxtPassword.Text.Trim()) == false)
+                //{
+                //    MessageBox.Show("Password is Invalid");
+                //    return;
+                //}
                 if (TxtPassword.Text.Trim() != TxtConfirmPassword.Text.Trim())
                 {
                     MessageBox.Show("Passwords are not same");
@@ -56,6 +56,7 @@ namespace Project
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Your Username and Password changed successfully");
+                this.Close();
             }
             catch (Exception ex)
             {

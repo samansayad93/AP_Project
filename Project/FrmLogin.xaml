@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Post Automation" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Red"/>
         <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="156,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="20"/>
-        <TextBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="156,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="20"/>
+        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="156,158,0,0" VerticalAlignment="Top" Width="173" Height="20"/>
         <Label x:Name="LblUsername" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="84" Margin="79,104,0,0"/>
         <Label x:Name="LblPassword" Content="Password:" HorizontalAlignment="Left" Margin="81,158,0,0" VerticalAlignment="Top" Height="32" Width="80"/>
         <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="273,214,0,0" VerticalAlignment="Top" Height="25" Width="56" Click="BtnLogin_Click"/>

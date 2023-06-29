@@ -29,5 +29,17 @@ namespace Project
             FrmInformationUser user = new FrmInformationUser();
             user.ShowDialog();
         }
+
+        private void M20_Click(object sender, RoutedEventArgs e)
+        {
+            FrmCharge frmCharge = new FrmCharge();
+            frmCharge.ShowDialog();
+        }
+
+        private void M30_Click(object sender, RoutedEventArgs e)
+        {
+            FrmChangeInformation frmChange = new FrmChangeInformation();
+            frmChange.ShowDialog();
+        }
     }
 }

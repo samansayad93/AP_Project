@@ -41,7 +41,7 @@ namespace Project
                 SqlCommand cmd = new SqlCommand("LOGIN", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@username", TxtUsername.Text.Trim());
-                cmd.Parameters.AddWithValue("@password", TxtPassword.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TxtPassword.Password.Trim());
                 cmd.Parameters.Add("@result", SqlDbType.Int);
                 cmd.Parameters["@result"].Direction = ParameterDirection.Output;
                 con.Open();
@@ -72,7 +72,7 @@ namespace Project
                 {
                     MessageBox.Show("User does not exists");
                     TxtUsername.Text = "";
-                    TxtPassword.Text = "";
+                    TxtPassword.Password = "";
                 }
             }
             catch (Exception ex)

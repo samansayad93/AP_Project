@@ -18,8 +18,8 @@
         <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Margin="250,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="TxtPersonalID" HorizontalAlignment="Left" Margin="250,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="250,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="250,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtRePassword" HorizontalAlignment="Left" Margin="250,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="150"/>
+        <PasswordBox x:Name="TxtRePassword" HorizontalAlignment="Left" Margin="250,270,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Margin="250,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="BtnSubmit_Click"/>
     </Grid>

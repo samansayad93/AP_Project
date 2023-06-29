@@ -47,7 +47,7 @@ namespace Project
                     MessageBox.Show("Personal ID is Invalid");
                     return;
                 }
-                if (Validation.IsThisPasswordValid(TxtPassword.Text.Trim()) == false)
+                if (Validation.IsThisPasswordValid(TxtPassword.Password.Trim()) == false)
                 {
                     MessageBox.Show("Password is Invalid");
                     return;
@@ -57,11 +57,11 @@ namespace Project
                     MessageBox.Show("Email is Invalid");
                     return;
                 }
-                if (TxtRePassword.Text.Trim() != TxtPassword.Text.Trim())
+                if (TxtRePassword.Password.Trim() != TxtPassword.Password.Trim())
                 {
                     MessageBox.Show("Not Same Password");
-                    TxtPassword.Text = "";
-                    TxtRePassword.Text = "";
+                    TxtPassword.Password = "";
+                    TxtRePassword.Password = "";
                     return;
                 }
 
