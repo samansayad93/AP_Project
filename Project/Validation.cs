@@ -73,12 +73,18 @@ namespace Project
                 return false;
             return true;
         }
-        public static bool IsExpired(this DateTime date)
+        public static bool IsExpired(this int year, int month)
         {
             DateTime now = DateTime.Now;
-            if (date.CompareTo(now) < 0) 
-                return false;
-            return true;
+            int year1 = now.Year;
+            int month1 = now.Month;
+
+            if (year >= year1)
+            {
+                if (year > year1) return true;
+                if(month >= month1) return true;
+            }
+            return false;
         }
         public static bool IsCardValid(this string code)
         {

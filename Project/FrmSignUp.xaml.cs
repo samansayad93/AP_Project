@@ -71,7 +71,7 @@ namespace Project
                 cmd.Parameters.AddWithValue("@name", TxtName.Text.Trim());
                 cmd.Parameters.AddWithValue("@lastname", TxtLastName.Text.Trim());
                 cmd.Parameters.AddWithValue("@username", TxtUsername.Text.Trim());
-                cmd.Parameters.AddWithValue("@password", TxtRePassword.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TxtRePassword.Password.Trim());
                 cmd.Parameters.AddWithValue("@email", TxtEmail.Text.Trim());
                 cmd.Parameters.Add("@result", SqlDbType.Int);
                 cmd.Parameters["@result"].Direction = ParameterDirection.Output;
