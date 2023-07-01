@@ -11,7 +11,7 @@
             <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="20">
                 <MenuItem x:Name="M00" Header="Register User" Click="M00_Click"/>
                 <MenuItem x:Name="M10" Header="Add Post" Click="M10_Click"/>
-                <MenuItem x:Name="M20" Header="Report"/>
+                <MenuItem x:Name="M20" Header="Report" Click="M20_Click"/>
                 <MenuItem x:Name="M30" Header="Post Information" Click="M30_Click"/>
             </Menu>
         </DockPanel>

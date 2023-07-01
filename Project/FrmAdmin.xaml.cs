@@ -41,5 +41,11 @@ namespace Project
             FrmInformation frmInformation = new FrmInformation();
             frmInformation.ShowDialog();
         }
+
+        private void M20_Click(object sender, RoutedEventArgs e)
+        {
+            FrmReport report = new FrmReport();
+            report.ShowDialog();
+        }
     }
 }
