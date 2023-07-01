@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -121,8 +122,11 @@ namespace Project
                 }
                 if (res == 3)
                 {
+                    string frommail = "samansayad93@gmail.com";
+                    string mailpassword = "emjkigrymedqpntd";
                     SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
-                    smtpClient.Port = 465;
+                    smtpClient.Port = 587;
+                    smtpClient.Credentials = new NetworkCredential(frommail,mailpassword);
                     smtpClient.EnableSsl = true;
                     var mailMessage = new MailMessage();
                     mailMessage.From = new MailAddress("samansayad93@gmail.com");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,25 +84,28 @@ namespace Project
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Post Status has successfully changed");
-                //if(CmbStatus.Text == "Delivered")
-                //{
-                //    SqlDataAdapter da = new SqlDataAdapter("FindEmailBySSN", con);
-                //    da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                //    da.SelectCommand.Parameters.AddWithValue("@userssn",TxtSendSSN.Text.Trim());
-                //    DataTable dt = new DataTable();
-                //    da.Fill(dt);
-                //    var email = dt.Rows[0][0].ToString();
-                //    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
-                //    smtpClient.Port = 465;
-                //    smtpClient.EnableSsl = true;
-                //    var mailMessage = new MailMessage();
-                //    mailMessage.From = new MailAddress("samansayad93@gmail.com");
-                //    mailMessage.Subject = "Your Post Has Been Delivered";
-                //    mailMessage.Body = $"<html><body><h1>Your Post Box with ID {TxtPostID.Text} has been delivered</h1></br><h2>You can Put Your Comment for this Post Box in your Panel</h2></body></html>";
-                //    mailMessage.IsBodyHtml = true;
-                //    mailMessage.To.Add(new MailAddress(email));
-                //    smtpClient.Send(mailMessage);
-                //}
+                if (CmbStatus.Text == "delivered")
+                {
+                    SqlDataAdapter da = new SqlDataAdapter("findemailbyssn", con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@userssn", TxtSendSSN.Text.Trim());
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    var email = dt.Rows[0][0].ToString();
+                    string frommail = "samansayad93@gmail.com";
+                    string mailpassword = "emjkigrymedqpntd";
+                    SmtpClient smtpclient = new SmtpClient("smtp.gmail.com");
+                    smtpclient.Port = 587;
+                    smtpclient.Credentials = new NetworkCredential(frommail, mailpassword);
+                    smtpclient.EnableSsl = true;
+                    var mailmessage = new MailMessage();
+                    mailmessage.From = new MailAddress("samansayad93@gmail.com");
+                    mailmessage.Subject = "your post has been delivered";
+                    mailmessage.Body = $"<html><body><h1>your post box with id {TxtPostID.Text} has been delivered</h1></br><h2>you can put your comment for this post box in your panel</h2></body></html>";
+                    mailmessage.IsBodyHtml = true;
+                    mailmessage.To.Add(new MailAddress(email));
+                    smtpclient.Send(mailmessage);
+                }
             }
             catch (Exception ex )
             {
