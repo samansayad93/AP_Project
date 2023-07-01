@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Sign Up" Height="450" Width="500" WindowStartupLocation="CenterScreen" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize" >
+        Title="Sign Up" Height="400" Width="500" WindowStartupLocation="CenterScreen" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize" >
     <Grid>
-        <Label x:Name="LblName" Content="Name:" HorizontalAlignment="Left" Margin="193,70,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblLastname" Content="Last Name:" HorizontalAlignment="Left" Margin="167,110,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblID" Content="Personal ID:" HorizontalAlignment="Left" Margin="162,150,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblUsername" Content="Username:" HorizontalAlignment="Left" Margin="170,190,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblPassword" Content="Password:" HorizontalAlignment="Left" Margin="172,230,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblRePassword" Content="Re Enter Password:" HorizontalAlignment="Left" Margin="121,270,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="195,310,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="250,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Margin="250,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtPersonalID" HorizontalAlignment="Left" Margin="250,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="250,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="250,230,0,0" VerticalAlignment="Top" Width="150"/>
-        <PasswordBox x:Name="TxtRePassword" HorizontalAlignment="Left" Margin="250,270,0,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Margin="250,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="BtnSubmit_Click"/>
+        <Label x:Name="LblName" Content="Name:" HorizontalAlignment="Left" Margin="193,28,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblLastname" Content="Last Name:" HorizontalAlignment="Left" Margin="167,68,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblID" Content="Personal ID:" HorizontalAlignment="Left" Margin="162,108,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblUsername" Content="Username:" HorizontalAlignment="Left" Margin="170,148,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblPassword" Content="Password:" HorizontalAlignment="Left" Margin="172,188,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblRePassword" Content="Re Enter Password:" HorizontalAlignment="Left" Margin="121,228,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="195,268,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="250,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Margin="250,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtPersonalID" HorizontalAlignment="Left" Margin="250,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="250,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="250,188,0,0" VerticalAlignment="Top" Width="150"/>
+        <PasswordBox x:Name="TxtRePassword" HorizontalAlignment="Left" Margin="250,228,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Margin="250,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,319,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="BtnSubmit_Click"/>
     </Grid>
 </Window>

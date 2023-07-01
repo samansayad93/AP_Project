@@ -8,27 +8,28 @@
         Title="Add Post" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Arial" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="LblSLocation" Content="Sender Location:" HorizontalAlignment="Left" Margin="176,42,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="167,108,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="168,108,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtSLocation" HorizontalAlignment="Left" Margin="299,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="52"/>
         <TextBox x:Name="TxtRLocation" HorizontalAlignment="Left" Margin="299,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="45"/>
-        <Label x:Name="LblType" Content="Type:" HorizontalAlignment="Left" Margin="237,166,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblType" Content="Type:" HorizontalAlignment="Left" Margin="238,166,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="299,166,0,0" VerticalAlignment="Top" Width="150" Height="25">
             <ComboBoxItem Content="Object"/>
             <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Fragile"/>
         </ComboBox>
         <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="484,250,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="231,218,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="227,218,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="299,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
-        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="210,260,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="211,260,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="CmbPostType" HorizontalAlignment="Left" Margin="299,260,0,0" VerticalAlignment="Top" Width="150" Height="25">
             <ComboBoxItem Content="Regular"/>
             <ComboBoxItem Content="Forehand"/>
         </ComboBox>
-        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="183,303,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="183,309,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="299,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
-        <Button x:Name="BtnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="547,368,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="BtnCalculate_Click"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="672,368,0,0" VerticalAlignment="Top" Height="40" Width="86" Click="BtnSubmit_Click"/>
-        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="167,369,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsEnabled="False" Height="25"/>
+        <Button x:Name="BtnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="544,353,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnCalculate_Click"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="669,353,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnSubmit_Click"/>
+        <Label x:Name="LblPrice" Content="price:" HorizontalAlignment="Left" Margin="238,369,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="299,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False" Height="25"/>
     </Grid>
 </Window>

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Change Personal Information" Height="300" Width="500" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Change Personal Information" Height="250" Width="450" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label x:Name="LblUsername" Content="New Username:" HorizontalAlignment="Left" Margin="133,61,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="262,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="LblPassword" Content="New Password:" HorizontalAlignment="Left" Margin="133,112,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="262,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="LblConfirmPassword" Content="Confirm New Password:" HorizontalAlignment="Left" Margin="88,166,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtConfirmPassword" HorizontalAlignment="Left" Margin="262,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="209,231,0,0" VerticalAlignment="Top" Click="BtnSubmit_Click"/>
+        <Label x:Name="LblUsername" Content="New Username:" HorizontalAlignment="Left" Margin="119,23,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="225,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LblPassword" Content="New Password:" HorizontalAlignment="Left" Margin="119,74,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="225,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LblConfirmPassword" Content="Confirm New Password:" HorizontalAlignment="Left" Margin="74,128,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtConfirmPassword" HorizontalAlignment="Left" Margin="225,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,181,0,0" VerticalAlignment="Top" Click="BtnSubmit_Click" Height="25" Width="50" RenderTransformOrigin="0.884,0.519"/>
     </Grid>
 </Window>
