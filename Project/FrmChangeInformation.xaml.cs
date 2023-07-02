@@ -32,17 +32,7 @@ namespace Project
         {
             try
             {
-                //if (Validation.IsThisUserValid(TxtUsername.Text.Trim()) == false)
-                //{
-                //    MessageBox.Show("Username is Invalid");
-                //    return;
-                //}
-                //if (Validation.IsThisUserPassValid(TxtPassword.Text.Trim()) == false)
-                //{
-                //    MessageBox.Show("Password is Invalid");
-                //    return;
-                //}
-                if (TxtPassword.Text.Trim() != TxtConfirmPassword.Text.Trim())
+                if (TxtPassword.Password.Trim() != TxtConfirmPassword.Password.Trim())
                 {
                     MessageBox.Show("Passwords are not same");
                     return;
@@ -51,7 +41,7 @@ namespace Project
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@userssn", App.Current.Properties["SSN"].ToString());
                 cmd.Parameters.AddWithValue("@username", TxtUsername.Text.Trim());
-                cmd.Parameters.AddWithValue("@password", TxtPassword.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TxtPassword.Password.Trim());
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();

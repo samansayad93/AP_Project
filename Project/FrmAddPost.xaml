@@ -17,7 +17,7 @@
             <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Fragile"/>
         </ComboBox>
-        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="484,250,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="546,171,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="227,218,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="299,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
         <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="211,260,0,0" VerticalAlignment="Top"/>

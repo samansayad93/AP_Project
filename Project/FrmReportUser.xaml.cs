@@ -23,6 +23,8 @@ namespace Project
     /// </summary>
     public partial class FrmReportUser : Window
     {
+        readonly SqlConnection con = new SqlConnection("server= DESKTOP-C4DNQ9C; Database= DbPost; Integrated security=true");
+
         public FrmReportUser()
         {
             InitializeComponent();

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Post Automation" Height="300" Width="450" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" FontFamily="Arial" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize">
+        Title="Post Automation" Height="300" Width="450" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" FontFamily="Arial" FontSize="14" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize">
     <Grid>
-        <Label Content="Post Automation" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Red"/>
-        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="156,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="20"/>
-        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="156,158,0,0" VerticalAlignment="Top" Width="173" Height="20"/>
-        <Label x:Name="LblUsername" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="84" Margin="79,104,0,0"/>
-        <Label x:Name="LblPassword" Content="Password:" HorizontalAlignment="Left" Margin="81,158,0,0" VerticalAlignment="Top" Height="32" Width="80"/>
-        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="273,214,0,0" VerticalAlignment="Top" Height="25" Width="56" Click="BtnLogin_Click"/>
-        <Button x:Name="BtnSignUp" Content="SignUp" HorizontalAlignment="Left" Margin="121,214,0,0" VerticalAlignment="Top" Height="25" Width="56" Click="BtnSignUp_Click"/>
+        <Label Content="Post Automation" HorizontalAlignment="Center" Margin="0,36,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Red"/>
+        <TextBox x:Name="TxtUsername" HorizontalAlignment="Left" Margin="195,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="20"/>
+        <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left" Margin="195,156,0,0" VerticalAlignment="Top" Width="173" Height="20"/>
+        <Label x:Name="LblUsername" Content="Username:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" Margin="115,96,0,0"/>
+        <Label x:Name="LblPassword" Content="Password:" HorizontalAlignment="Left" Margin="115,151,0,0" VerticalAlignment="Top" Height="30" Width="80"/>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="282,214,0,0" VerticalAlignment="Top" Height="30" Width="60" Click="BtnLogin_Click"/>
+        <Button x:Name="BtnSignUp" Content="SignUp" HorizontalAlignment="Left" Margin="126,214,0,0" VerticalAlignment="Top" Height="30" Width="58" Click="BtnSignUp_Click"/>
     </Grid>
 </Window>

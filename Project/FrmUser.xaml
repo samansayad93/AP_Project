@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="User" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Post Automation" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontSize="14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DockPanel LastChildFill="False">
-            <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="20">
+            <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="25" HorizontalAlignment="Center">
                 <MenuItem x:Name="M00" Header="Report" Click="M00_Click"/>
                 <MenuItem x:Name="M10" Header="Post Information" Click="M10_Click"/>
                 <MenuItem x:Name="M20" Header="Charge Account" Click="M20_Click"/>
                 <MenuItem x:Name="M30" Header="Change Personal Information" Click="M30_Click"/>
             </Menu>
         </DockPanel>
+        <Label Content="Welcome To Post Automation" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" Foreground="Red"/>
     </Grid>
 </Window>

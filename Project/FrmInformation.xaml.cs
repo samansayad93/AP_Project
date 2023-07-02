@@ -93,7 +93,7 @@ namespace Project
                     da.Fill(dt);
                     var email = dt.Rows[0][0].ToString();
                     string frommail = "samansayad93@gmail.com";
-                    string mailpassword = "emjkigrymedqpntd";
+                    string mailpassword = "jtgkwdggxxydxqnq";
                     SmtpClient smtpclient = new SmtpClient("smtp.gmail.com");
                     smtpclient.Port = 587;
                     smtpclient.Credentials = new NetworkCredential(frommail, mailpassword);

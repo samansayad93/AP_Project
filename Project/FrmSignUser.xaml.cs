@@ -123,14 +123,14 @@ namespace Project
                 if (res == 3)
                 {
                     string frommail = "samansayad93@gmail.com";
-                    string mailpassword = "emjkigrymedqpntd";
+                    string mailpassword = "jtgkwdggxxydxqnq";
                     SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
                     smtpClient.Port = 587;
                     smtpClient.Credentials = new NetworkCredential(frommail,mailpassword);
                     smtpClient.EnableSsl = true;
                     var mailMessage = new MailMessage();
                     mailMessage.From = new MailAddress("samansayad93@gmail.com");
-                    mailMessage.Subject = "Your Post Box Username and Password";
+                    mailMessage.Subject = "Your Post Automation Username and Password";
                     mailMessage.Body = $"<html><body><h1>Your username and passsword for sign in</h1></br><h2>Username: {username} </h2><h2>Password: {password}</h2></body></html>";
                     mailMessage.IsBodyHtml = true;
                     mailMessage.To.Add(new MailAddress(TxtEmail.Text.Trim()));

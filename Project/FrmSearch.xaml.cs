@@ -32,11 +32,11 @@ namespace Project
         {
             try
             {
-                //if(Validation.IsThisSSNValid(TxtSearch.Text.Trim()) == false)
-                //{
-                //    MessageBox.Show("SSN is Invalid");
-                //    return;
-                //}
+                if (Validation.IsThisSSNValid(TxtSearch.Text.Trim()) == false)
+                {
+                    MessageBox.Show("SSN is Invalid");
+                    return;
+                }
                 App.Current.Properties["UserSSN"] = TxtSearch.Text.Trim();
                 SqlCommand cmd = new SqlCommand("SearchUser", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -49,21 +49,15 @@ namespace Project
                 int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
                 if (res == 1)
                 {
-                    //FrmAddPost frmAddPost = new FrmAddPost();
-                    //this.Close();
-                    //frmAddPost.ShowDialog();
                     FrmAddPost frmAddPost = new FrmAddPost();
                     this.Close();
                     frmAddPost.ShowDialog();
                 }
                 else if (res == 2)
                 {
-                    //FrmSignUser frmSignUser = new FrmSignUser();
-                    //this.Close();
-                    //frmSignUser.ShowDialog();
-                    FrmAddPost frmAddPost = new FrmAddPost();
+                    FrmSignUser frmSignUser = new FrmSignUser();
                     this.Close();
-                    frmAddPost.ShowDialog();
+                    frmSignUser.ShowDialog();
                 }
                 this.Close();
             }

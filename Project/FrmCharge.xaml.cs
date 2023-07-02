@@ -51,21 +51,21 @@ namespace Project
         {
             try
             {
-                //if(Validation.IsCardValid(TxtCardNumber.Text.Trim()) == false)
-                //{
-                //    MessageBox.Show("Card Number is Invalid");
-                //    return;
-                //}
-                //if (Validation.IsThisCVVValid(TxtCVV.Text.Trim()) == false)
-                //{
-                //    MessageBox.Show("CVV2 is Invalid");
-                //    return;
-                //}
-                //if(Validation.IsExpired(Convert.ToInt32(TxtExpire1.Text.Trim()),Convert.ToInt32(TxtExpire2.Text.Trim())) == false)
-                //{
-                //    MessageBox.Show("Your Card is Expired");
-                //    return;
-                //}
+                if (Validation.IsCardValid(TxtCardNumber.Text.Trim()) == false)
+                {
+                    MessageBox.Show("Card Number is Invalid");
+                    return;
+                }
+                if (Validation.IsThisCVVValid(TxtCVV.Text.Trim()) == false)
+                {
+                    MessageBox.Show("CVV2 is Invalid");
+                    return;
+                }
+                if (Validation.IsExpired(Convert.ToInt32(TxtExpire1.Text.Trim()), Convert.ToInt32(TxtExpire2.Text.Trim())) == false)
+                {
+                    MessageBox.Show("Your Card is Expired");
+                    return;
+                }
                 SqlCommand cmd = new SqlCommand("UpdateWallet", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@userssn", App.Current.Properties["SSN"].ToString());
