@@ -40,7 +40,7 @@
             <ComboBoxItem Content="Delivered"/>
         </ComboBox>
         <Label x:Name="LblComment" Content="Comment:" HorizontalAlignment="Left" Margin="743,136,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtComment" HorizontalAlignment="Left" Margin="654,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Height="151" IsEnabled="False"/>
+        <TextBox x:Name="TxtComment" HorizontalAlignment="Left" Margin="654,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Height="151" IsEnabled="False" AcceptsReturn="True"/>
         <Button x:Name="BtnUpdate" Content="Update" HorizontalAlignment="Left" Margin="304,369,0,0" VerticalAlignment="Top" Height="30" Width="66" IsEnabled="False" Click="BtnUpdate_Click"/>
     </Grid>
 </Window>

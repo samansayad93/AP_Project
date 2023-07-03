@@ -73,32 +73,31 @@ namespace Project
                 return false;
             return true;
         }
-        public static bool IsExpired(this int year, int month)
+        public static bool IsExpired(this DateTime e)
         {
             DateTime now = DateTime.Now;
-            int year1 = now.Year;
-            int month1 = now.Month;
 
-            if (year >= year1)
+            if (e.CompareTo(now) < 0)
             {
-                if (year > year1) return true;
-                if(month >= month1) return true;
+                return false;
             }
-            return false;
+            return true;
         }
         public static bool IsCardValid(this string code)
         {
             int sum = 0;
 
-            for (int i = 0; i < code.Length; i++)
+            for (int i = code.Length-1; i >= 0; i--)
             {
-                if (i % 2 == 0)
+                if (i % 2 == 1)
                 {
                     sum += int.Parse(code[i].ToString());
                 }
                 else
                 {
-                    sum += int.Parse(code[i].ToString()) * 2;
+                    int tmp = int.Parse(code[i].ToString()) * 2;
+                    sum += tmp % 10;
+                    sum += tmp / 10;
                 }
             }
             if (sum % 10 != 0) 

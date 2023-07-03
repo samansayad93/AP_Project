@@ -61,7 +61,7 @@ namespace Project
                     MessageBox.Show("CVV2 is Invalid");
                     return;
                 }
-                if (Validation.IsExpired(Convert.ToInt32(TxtExpire1.Text.Trim()), Convert.ToInt32(TxtExpire2.Text.Trim())) == false)
+                if (Validation.IsExpired(Convert.ToDateTime($"{Convert.ToInt32(TxtExpire2.Text)}/{1}/{2000 + Convert.ToInt32(TxtExpire1.Text)}")) == false)
                 {
                     MessageBox.Show("Your Card is Expired");
                     return;
