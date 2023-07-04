@@ -5,31 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Add Post" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Arial" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize">
+        Title="Add Post" Height="450" Width="750" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontFamily="Arial" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Grid>
-        <Label x:Name="LblSLocation" Content="Sender Location:" HorizontalAlignment="Left" Margin="176,42,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="168,108,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtSLocation" HorizontalAlignment="Left" Margin="299,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="52"/>
-        <TextBox x:Name="TxtRLocation" HorizontalAlignment="Left" Margin="299,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="45"/>
-        <Label x:Name="LblType" Content="Type:" HorizontalAlignment="Left" Margin="238,166,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="299,166,0,0" VerticalAlignment="Top" Width="150" Height="25">
+        <Label x:Name="LblSLocation" Content="Sender Location:" HorizontalAlignment="Left" Margin="102,39,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblRLocation" Content="Receiver Location:" HorizontalAlignment="Left" Margin="94,105,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtSLocation" HorizontalAlignment="Left" Margin="225,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="52"/>
+        <TextBox x:Name="TxtRLocation" HorizontalAlignment="Left" Margin="225,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="416" Height="45"/>
+        <Label x:Name="LblType" Content="Type:" HorizontalAlignment="Left" Margin="164,163,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CmbType" HorizontalAlignment="Left" Margin="225,163,0,0" VerticalAlignment="Top" Width="150" Height="25">
             <ComboBoxItem Content="Object"/>
             <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Fragile"/>
         </ComboBox>
-        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="546,171,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="227,218,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="299,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
-        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="211,260,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CmbPostType" HorizontalAlignment="Left" Margin="299,260,0,0" VerticalAlignment="Top" Width="150" Height="25">
+        <CheckBox x:Name="ChckValuable" Content="IsValuable" HorizontalAlignment="Left" Margin="472,168,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblWeigth" Content="Weigth:" HorizontalAlignment="Left" Margin="153,215,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtWeigth" HorizontalAlignment="Left" Margin="225,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
+        <Label x:Name="LblPostType" Content="Post Type:" HorizontalAlignment="Left" Margin="137,257,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CmbPostType" HorizontalAlignment="Left" Margin="225,257,0,0" VerticalAlignment="Top" Width="150" Height="25">
             <ComboBoxItem Content="Regular"/>
             <ComboBoxItem Content="Forehand"/>
         </ComboBox>
-        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="183,309,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="299,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
-        <Button x:Name="BtnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="544,353,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnCalculate_Click"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="669,353,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnSubmit_Click"/>
-        <Label x:Name="LblPrice" Content="price:" HorizontalAlignment="Left" Margin="238,369,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="299,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False" Height="25"/>
+        <Label x:Name="LblPhone" Content="Phone Number:" HorizontalAlignment="Left" Margin="109,306,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPhone" HorizontalAlignment="Left" Margin="225,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
+        <Button x:Name="BtnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="260,350,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnCalculate_Click"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="482,350,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="BtnSubmit_Click"/>
+        <Label x:Name="LblPrice" Content="price:" HorizontalAlignment="Left" Margin="438,237,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtPrice" HorizontalAlignment="Left" Margin="491,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False" Height="25"/>
     </Grid>
 </Window>

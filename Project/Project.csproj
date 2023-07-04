@@ -8,8 +8,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="add-post.png" />
+    <None Remove="add-user.png" />
+    <None Remove="money.png" />
+    <None Remove="password-book.png" />
+    <None Remove="report.png" />
+    <None Remove="show-information.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="IronPdf" Version="2023.6.10" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="add-post.png" />
+    <Resource Include="add-user.png" />
+    <Resource Include="money.png" />
+    <Resource Include="password-book.png" />
+    <Resource Include="report.png" />
+    <Resource Include="show-information.png" />
   </ItemGroup>
 
 </Project>
