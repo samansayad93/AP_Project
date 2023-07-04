@@ -1,4 +1,11 @@
-CREATE PROCEDURE AddUser
+USE [DbPost]
+GO
+/****** Object:  StoredProcedure [dbo].[AddUser]    Script Date: 7/4/2023 3:33:48 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[AddUser]
 @name nvarchar(50),
 @lastname nvarchar(50),
 @ssn nvarchar(50),
