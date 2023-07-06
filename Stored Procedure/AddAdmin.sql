@@ -1,4 +1,11 @@
-CREATE PROCEDURE AddAdmin
+USE [DbPost]
+GO
+/****** Object:  StoredProcedure [dbo].[AddAdmin]    Script Date: 7/4/2023 3:32:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[AddAdmin]
 @ID int,
 @name nvarchar(50),
 @lastname nvarchar(50),

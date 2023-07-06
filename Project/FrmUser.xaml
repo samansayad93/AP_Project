@@ -5,15 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="User" Height="450" Width="800" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Post Automation" Height="450" Width="500" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Arial" FontSize="14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DockPanel LastChildFill="False">
-            <Menu DockPanel.Dock="Top" FontFamily="Arial" FontSize="14" Height="20">
-                <MenuItem x:Name="M00" Header="Report"/>
-                <MenuItem x:Name="M10" Header="Post Information" Click="M10_Click"/>
-                <MenuItem x:Name="M20" Header="Charge Account" Click="M20_Click"/>
-                <MenuItem x:Name="M30" Header="Change Personal Information" Click="M30_Click"/>
-            </Menu>
-        </DockPanel>
+        <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" Width="300">
+            <ListBox.Resources>
+                <Style TargetType="{x:Type Expander}">
+                    <Setter Property="IsExpanded" Value="{Binding Path=IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}"/>
+                </Style>
+            </ListBox.Resources>
+            <ListBox.Template>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <ItemsPresenter/>
+                </ControlTemplate>
+            </ListBox.Template>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBoxItem>
+                <TextBlock Margin="0,25,0,0" Text="Welcome to Post Automation" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" Foreground="red"/>
+            </ListBoxItem>
+            <ListBoxItem x:Name="M00" MouseDoubleClick="M00_Click" Margin="10,25,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/report.png"/>
+                    <TextBlock Margin="10,0,0,0" Text="Report" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem x:Name="M10" MouseDoubleClick="M10_Click" Margin="10,25,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/show-information.png"/>
+                    <TextBlock Margin="10,0,0,0" Text="Show Post Information" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem x:Name="M20" MouseDoubleClick="M20_Click" Margin="10,25,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/money.png"/>
+                    <TextBlock Margin="10,0,0,0" Text="Charge Account" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White"/>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem x:Name="M30" MouseDoubleClick="M30_Click" Margin="10,25,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/password-book.png"/>
+                    <TextBlock Margin="10,0,0,0" Text="Change Personal Informaation" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
     </Grid>
 </Window>

@@ -47,7 +47,7 @@ namespace Project
             if (weigth > 0.5)
             {
                 int tmp = (int)(weigth / 0.5) - 1;
-                basev *= tmp * 1.2;
+                basev *= Math.Pow(1.2,tmp);
             }
             if(CmbPostType.Text == "Forehand")
             {
@@ -65,12 +65,16 @@ namespace Project
         {
             try
             {
-                if (Validation.IsThisPhoneNumberValid(TxtPhone.Text.Trim()) == false)
+                if(TxtPhone.Text.Trim() != "")
                 {
-                    MessageBox.Show("Phone Number is Invalid");
-                    return;
+                    if (Validation.IsThisPhoneNumberValid(TxtPhone.Text.Trim()) == false)
+                    {
+                        MessageBox.Show("Phone Number is Invalid");
+                        return;
+                    }
                 }
                 double price = Calculate();
+                price = Math.Round(price, 1);
                 TxtPrice.Text = price.ToString();
                 TxtSLocation.IsEnabled = false;
                 TxtRLocation.IsEnabled = false;
@@ -98,24 +102,30 @@ namespace Project
                 cmd.Parameters.AddWithValue("@sendloc", TxtSLocation.Text.Trim());
                 cmd.Parameters.AddWithValue("@receiveloc", TxtRLocation.Text.Trim());
                 cmd.Parameters.AddWithValue("@valueable", Convert.ToBoolean(ChckValuable.IsChecked));
-                cmd.Parameters.AddWithValue("@type",CmbType.Text.Trim());
-                cmd.Parameters.AddWithValue("@posttype",CmbPostType.Text.Trim());
-                cmd.Parameters.AddWithValue("@weight",Convert.ToDouble(TxtWeigth.Text.Trim()));
-                cmd.Parameters.AddWithValue("@phone",TxtPhone.Text.Trim());
-                cmd.Parameters.AddWithValue("@price",Convert.ToDouble(TxtPrice.Text.Trim()));
+                cmd.Parameters.AddWithValue("@type", CmbType.Text.Trim());
+                cmd.Parameters.AddWithValue("@posttype", CmbPostType.Text.Trim());
+                cmd.Parameters.AddWithValue("@weight", Convert.ToDouble(TxtWeigth.Text.Trim()));
+                cmd.Parameters.AddWithValue("@phone", TxtPhone.Text.Trim());
+                cmd.Parameters.AddWithValue("@price", Convert.ToDouble(TxtPrice.Text.Trim()));
                 cmd.Parameters.Add("@result", SqlDbType.Int);
                 cmd.Parameters["@result"].Direction = ParameterDirection.Output;
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
                 int res = Convert.ToInt32(cmd.Parameters["@result"].Value);
-                if(res == 1)
+                if (res == 1)
                 {
                     MessageBox.Show("Not Enough Money in Wallet");
                 }
                 else if(res == 2)
                 {
-                    MessageBox.Show("Your Post Added successfully\nYour Pst ID: {}");
+                    SqlDataAdapter da = new SqlDataAdapter("FindPostIDBySSN",con);
+                    da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand.Parameters.AddWithValue("@userssn", App.Current.Properties["UserSSN"]);
+                    da.SelectCommand.Parameters.AddWithValue("@price", Convert.ToDouble(TxtPrice.Text.Trim()));
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    MessageBox.Show($"Your Post Added successfully\nYour Post ID: {dt.Rows[0][0].ToString()}");
                 }
                 this.Close();
             }

@@ -48,6 +48,8 @@ namespace Project
                 }
                 else if (res == 2)
                 {
+                    BtnUpdate.IsEnabled = false;
+                    CmbStatus.IsEnabled = false;
                     TxtSendSSN.Text = dt.Rows[0][1].ToString();
                     TxtSLocation.Text = dt.Rows[0][2].ToString();
                     TxtRLocation.Text = dt.Rows[0][3].ToString();
@@ -84,7 +86,7 @@ namespace Project
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Post Status has successfully changed");
-                if (CmbStatus.Text == "delivered")
+                if (CmbStatus.Text == "Delivered")
                 {
                     SqlDataAdapter da = new SqlDataAdapter("findemailbyssn", con);
                     da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -93,7 +95,7 @@ namespace Project
                     da.Fill(dt);
                     var email = dt.Rows[0][0].ToString();
                     string frommail = "samansayad93@gmail.com";
-                    string mailpassword = "emjkigrymedqpntd";
+                    string mailpassword = "jtgkwdggxxydxqnq";
                     SmtpClient smtpclient = new SmtpClient("smtp.gmail.com");
                     smtpclient.Port = 587;
                     smtpclient.Credentials = new NetworkCredential(frommail, mailpassword);

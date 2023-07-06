@@ -1,4 +1,0 @@
-FRMADDPOST
-return post id
-FRMCHARGE
-create and show pdf

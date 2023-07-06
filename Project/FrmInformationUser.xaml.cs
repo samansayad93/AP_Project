@@ -32,6 +32,8 @@ namespace Project
         {
             try
             {
+                BtnUpdate.IsEnabled = false;
+                TxtComment.IsEnabled = false;
                 SqlDataAdapter da = new SqlDataAdapter("SearchPostUser", con);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@postid", Convert.ToInt32(TxtPostID.Text.Trim()));
