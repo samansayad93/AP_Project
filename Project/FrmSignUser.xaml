@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="Sign Up User" Height="350" Width="400" WindowStartupLocation="CenterScreen" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize" >
+        Title="Sign Up User" Height="300" Width="450" WindowStartupLocation="CenterScreen" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" ResizeMode="NoResize" >
     <Grid>
-        <Label x:Name="LblName" Content="Name:" HorizontalAlignment="Left" Margin="143,41,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblLastname" Content="Last Name:" HorizontalAlignment="Left" Margin="117,81,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblSSN" Content="SSN:" HorizontalAlignment="Left" Margin="150,121,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblMobile" Content="Mobile Number:" HorizontalAlignment="Left" Margin="94,161,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="145,201,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="200,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Margin="200,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtSSN" HorizontalAlignment="Left" Margin="200,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtMobile" HorizontalAlignment="Left" Margin="200,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Margin="200,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="BtnSubmit_Click"/>
+        <Label x:Name="LblName" Content="Name:" HorizontalAlignment="Left" Margin="168,30,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblLastname" Content="Last Name:" HorizontalAlignment="Left" Margin="142,70,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblSSN" Content="SSN:" HorizontalAlignment="Left" Margin="175,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblMobile" Content="Mobile Number:" HorizontalAlignment="Left" Margin="119,150,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblEmail" Content="Email:" HorizontalAlignment="Left" Margin="170,190,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtName" HorizontalAlignment="Left" Margin="225,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtLastName" HorizontalAlignment="Left" Margin="225,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtSSN" HorizontalAlignment="Left" Margin="225,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtMobile" HorizontalAlignment="Left" Margin="225,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Margin="225,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="BtnSubmit_Click"/>
     </Grid>
 </Window>
