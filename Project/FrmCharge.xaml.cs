@@ -1,8 +1,11 @@
-﻿using IronPdf;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,9 +84,19 @@ namespace Project
                 TxtCharge.Text = dt.Rows[0][0].ToString();
                 if (MessageBox.Show("Your Account has been charged successfully.\nDo you want Receipt?", "Message", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    var pdf = new ChromePdfRenderer();
-                    var doc = pdf.RenderHtmlAsPdf($"<h1>Your Receipt</h1><h2>Your SSN: {App.Current.Properties["SSN"]}</h2><h2>Amount: {TxtAmount.Text.Trim()}</h2><h2>Date and Time: {DateTime.Now.ToString()}</h2><h2>Your Current Balance: {TxtCharge.Text.Trim()}</h2>");
-                    doc.SaveAs("D:\\project\\uni\\AP_Project\\Reciept.pdf");
+                    SaveFileDialog dialog = new SaveFileDialog();
+                    dialog.FileName = "Receipt.pdf";
+                    if(dialog.ShowDialog() == true)
+                    {
+                        Document doc = new Document(iTextSharp.text.PageSize.A5);
+                        PdfWriter pdf = PdfWriter.GetInstance(doc, new FileStream(dialog.FileName, FileMode.Create));
+                        string index = $"Your Receipt\nYour SSN: {App.Current.Properties["SSN"]}\nAmount: {TxtAmount.Text.Trim()}\nDate and Time: {DateTime.Now.ToString()}\nYour Current Balance: {TxtCharge.Text.Trim()}</h2>";
+                        doc.Open();
+                        iTextSharp.text.Paragraph par = new iTextSharp.text.Paragraph(index);
+                        doc.Add(par);
+                        doc.Close();
+                        MessageBox.Show("Your Receipt Saved Successfully");
+                    }
                 }
                 this.Close();
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -65,43 +66,48 @@ namespace Project
                 da.SelectCommand.Parameters.AddWithValue("@posttype", posttype);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                StreamWriter sw = new StreamWriter("D:\\project\\uni\\AP_Project\\Report.csv", false);
-                //headers    
-                for (int i = 0; i < dt.Columns.Count; i++)
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.FileName = "Report.csv";
+                if (dialog.ShowDialog() == true)
                 {
-                    sw.Write(dt.Columns[i]);
-                    if (i < dt.Columns.Count - 1)
-                    {
-                        sw.Write(",");
-                    }
-                }
-                sw.Write(sw.NewLine);
-                foreach (DataRow dr in dt.Rows)
-                {
+                    StreamWriter sw = new StreamWriter(dialog.FileName, false);
+                    //headers    
                     for (int i = 0; i < dt.Columns.Count; i++)
                     {
-                        if (!Convert.IsDBNull(dr[i]))
-                        {
-                            string value = dr[i].ToString();
-                            if (value.Contains(','))
-                            {
-                                value = String.Format("\"{0}\"", value);
-                                sw.Write(value);
-                            }
-                            else
-                            {
-                                sw.Write(dr[i].ToString());
-                            }
-                        }
+                        sw.Write(dt.Columns[i]);
                         if (i < dt.Columns.Count - 1)
                         {
                             sw.Write(",");
                         }
                     }
                     sw.Write(sw.NewLine);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        for (int i = 0; i < dt.Columns.Count; i++)
+                        {
+                            if (!Convert.IsDBNull(dr[i]))
+                            {
+                                string value = dr[i].ToString();
+                                if (value.Contains(','))
+                                {
+                                    value = String.Format("\"{0}\"", value);
+                                    sw.Write(value);
+                                }
+                                else
+                                {
+                                    sw.Write(dr[i].ToString());
+                                }
+                            }
+                            if (i < dt.Columns.Count - 1)
+                            {
+                                sw.Write(",");
+                            }
+                        }
+                        sw.Write(sw.NewLine);
+                    }
+                    sw.Close();
+                    MessageBox.Show("Your Report Has successfully Created.");
                 }
-                sw.Close();
-                MessageBox.Show("Your Report Has successfully Created.");
             }
             catch (Exception ex)
             {
